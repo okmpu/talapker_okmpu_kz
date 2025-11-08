@@ -1,0 +1,282 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-09 00:25+0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+#: config/settings.py:113
+msgid "Kazakh"
+msgstr "Қазақша"
+
+#: config/settings.py:114
+msgid "Russian"
+msgstr "Русский"
+
+#: config/settings.py:115
+msgid "English"
+msgstr "English"
+
+#: core/models/contents.py:11 core/models/contents.py:40
+#: core/models/contents.py:49
+msgid "Category"
+msgstr "Категория"
+
+#: core/models/contents.py:12 core/models/contents.py:62
+#: core/models/contents.py:71 core/models/contents.py:89
+#: core/models/contents.py:107 core/models/contents.py:126
+#: core/models/contents.py:151
+msgid "Content"
+msgstr "Контент"
+
+#: core/models/contents.py:13
+msgid "Link"
+msgstr "Сілтеме"
+
+#: core/models/contents.py:15
+msgid "Name"
+msgstr "Атауы"
+
+#: core/models/contents.py:16 core/models/contents.py:52
+msgid "Slug"
+msgstr "Кілттік сөз"
+
+#: core/models/contents.py:17
+msgid "Category type"
+msgstr "Категория түрі"
+
+#: core/models/contents.py:20
+msgid "Parent"
+msgstr "Иелік"
+
+#: core/models/contents.py:22
+msgid "Multiple"
+msgstr "Көп контентті"
+
+#: core/models/contents.py:23 core/models/main.py:10 core/models/main.py:32
+msgid "URL"
+msgstr ""
+
+#: core/models/contents.py:24 core/models/main.py:11
+msgid "Target"
+msgstr "Таргет"
+
+#: core/models/contents.py:25 core/models/contents.py:55
+#: core/models/contents.py:74 core/models/contents.py:92
+#: core/models/contents.py:111 core/models/contents.py:137
+#: core/models/contents.py:155 core/models/main.py:12 core/models/main.py:34
+msgid "Order"
+msgstr "Реттілік"
+
+#: core/models/contents.py:41
+msgid "Categories"
+msgstr "Категориялар"
+
+#: core/models/contents.py:51 core/models/contents.py:153
+#: core/models/main.py:26
+msgid "Title"
+msgstr "Тақырыбы"
+
+#: core/models/contents.py:53 core/models/contents.py:154
+msgid "Description"
+msgstr "Сипаттамасы"
+
+#: core/models/contents.py:54
+msgid "Last update"
+msgstr "Соңғы өзгеріс"
+
+#: core/models/contents.py:63
+msgid "Contents"
+msgstr "Контенттер"
+
+#: core/models/contents.py:73
+msgid "Text"
+msgstr "Мәтін"
+
+#: core/models/contents.py:77 core/models/contents.py:80
+msgid "Text content"
+msgstr "Мәтінді контент"
+
+#: core/models/contents.py:81
+msgid "Text contents"
+msgstr "Мәтінді контенттер"
+
+#: core/models/contents.py:91 core/models/contents.py:130
+msgid "Image"
+msgstr "Сурет"
+
+#: core/models/contents.py:95 core/models/contents.py:98
+msgid "Image content"
+msgstr "Суретті контент"
+
+#: core/models/contents.py:99
+msgid "Image contents"
+msgstr "Суретті контенттер"
+
+#: core/models/contents.py:109
+msgid "Caption"
+msgstr "Тақырыбы"
+
+#: core/models/contents.py:110
+msgid "Source file"
+msgstr "Файл"
+
+#: core/models/contents.py:114 core/models/contents.py:117
+msgid "File content"
+msgstr "Файлды контент"
+
+#: core/models/contents.py:118
+msgid "File contents"
+msgstr "Файлды контенттер"
+
+#: core/models/contents.py:128
+msgid "Full name"
+msgstr "Толық аты-жөні"
+
+#: core/models/contents.py:133
+msgid "Activity"
+msgstr "Қызметі"
+
+#: core/models/contents.py:134
+msgid "Bio"
+msgstr "Биография"
+
+#: core/models/contents.py:135
+msgid "Phone"
+msgstr "Телефон"
+
+#: core/models/contents.py:136
+msgid "Email"
+msgstr "Электронды пошта"
+
+#: core/models/contents.py:140 core/models/contents.py:143
+msgid "Staff content"
+msgstr "Қызметкер контенті"
+
+#: core/models/contents.py:144
+msgid "Staff contents"
+msgstr "Қызметкер контенттері"
+
+#: core/models/contents.py:158 core/models/contents.py:162
+msgid "Popup content"
+msgstr ""
+
+#: core/models/contents.py:163
+msgid "Popup contents"
+msgstr ""
+
+#: core/models/main.py:9
+msgid "Label"
+msgstr "Атауы"
+
+#: core/models/main.py:18
+msgid "Resource"
+msgstr "Ресурс"
+
+#: core/models/main.py:19 ui/templates/base.html:259
+msgid "Resources"
+msgstr "Ресурстар"
+
+#: core/models/main.py:28
+msgid "Poster"
+msgstr "Постер"
+
+#: core/models/main.py:31
+msgid "About"
+msgstr "Анықтама"
+
+#: core/models/main.py:33
+msgid "Is archive"
+msgstr "Мұрағатталған"
+
+#: core/models/main.py:40
+msgid "Headliner"
+msgstr "Хэдлайнер"
+
+#: core/models/main.py:41
+msgid "Headliners"
+msgstr "Хэдлайнерлер"
+
+#: core/validators.py:10
+#, python-brace-format
+msgid "Maximum file size: {max_size_mb}MB"
+msgstr "Файлдың максималды өлшемі: {max_size_mb}МБ"
+
+#: core/validators.py:16
+msgid "The image size should not exceed 1MB"
+msgstr "Кескін өлшемі 1МБ аспауы керек"
+
+#: core/validators.py:24
+msgid "The image should be square"
+msgstr "Кескін төртбұрышты болуы керек"
+
+#: core/validators.py:27
+msgid "The maximum image resolution is 1024x1024px"
+msgstr "Кескіннің максималды көлемі - 1024x1024px"
+
+#: core/validators.py:31 core/validators.py:52
+msgid ""
+"The image could not be processed. Make sure that the file is a valid image"
+msgstr "Кескінді өңдеу мүмкін болмады. Файлдың жарамды кескін екеніне көз жеткізіңіз"
+
+#: core/validators.py:37
+msgid "The image size should not exceed 2MB"
+msgstr "Кескін өлшемі 2МБ аспауы керек"
+
+#: core/validators.py:45
+msgid "Minimum image resolution: 640x320px"
+msgstr "Кескіннің минималды ажыратымдылығы: 640x320px"
+
+#: core/validators.py:48
+msgid ""
+"The image should be in landscape orientation (width is greater than height)"
+msgstr "Кескін ландшафт бағытында болуы керек (ені биіктіктен үлкен)"
+
+#: ui/templates/app/content/page.html:157
+msgid "Warning about content creation"
+msgstr "Мазмұн жасау туралы ескерту"
+
+#: ui/templates/app/content/page.html:159
+msgid ""
+"If you are looking for details related to this page, unfortunately they have "
+"not yet been downloaded. Remind the site management to insert data!"
+msgstr ""
+"Егер сіз осы параққа қатысты мәліметтерді іздесеңіз, өкінішке орай, олар бар"
+"әлі жүктелмеген. Сайт басшылығына деректерді енгізуді ескертіңіз!"
+
+#: ui/templates/base.html:123 ui/templates/base.html:242
+#: ui/templates/components/nav-drawer.html:72
+msgid "Home page"
+msgstr "Басты бет"
+
+#: ui/templates/base.html:201
+msgid "All copyrights are protected."
+msgstr "Барлық авторлық құқықтар қорғалған."
+
+#: ui/templates/base.html:238
+msgid "Navigation"
+msgstr "Навигация"
+
+#: ui/templates/base.html:245
+msgid "News"
+msgstr "Жаңалықтар"
+
+#: ui/templates/base.html:248
+msgid "Announcements"
+msgstr "Хабарландырулар"
+
+#: ui/templates/base.html:251
+msgid "Events"
+msgstr "Іс-шаралары"

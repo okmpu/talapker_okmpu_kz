@@ -1,0 +1,167 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+
+{% block title %}{{ content.title }}{% endblock %}
+
+
+{% block content %}
+<div class="max-w-screen-2xl w-full mx-auto px-4">
+    <!-- Sidebar button -->
+    <button 
+        data-drawer-target="sidebar-multi-level-sidebar" 
+        data-drawer-toggle="sidebar-multi-level-sidebar"
+        aria-controls="sidebar-multi-level-sidebar" 
+        type="button"
+        class="fixed left-0 top-1/2 inline-flex items-center z-10 bg-white shadow px-2 py-4 rounded-lg lg:hidden hover:bg-secondary-100 focus:outline-none focus:ring-2 focus:ring-secondary-200"
+    >
+        <svg 
+            xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+            class="lucide lucide-chevron-right-icon lucide-chevron-right">
+            <path d="m9 18 6-6-6-6" />
+        </svg>
+    </button>
+
+    <div class="flex justify-between">
+        <!-- Sidebar side -->
+        <aside 
+            id="sidebar-multi-level-sidebar"
+            class="fixed z-50 lg:z-0 lg:relative w-full bg-white max-w-xs transition-transform -translate-x-full lg:translate-x-0 border-r border-border-200"
+            aria-label="Sidebar"
+        >
+            <div class= "h-screen overflow-y-auto px-3 py-4 lg:h-auto lg:sticky lg:top-10">
+                <div class="pt-4 pb-2">
+                    <h1 class="font-medium md:text-xl">{{ category.name }}</h1>
+                </div>
+
+                <ul 
+                    class="space-y-1" 
+                    id="accordion-collapse" 
+                    data-accordion="collapse" 
+                    data-inactive-classes="text-foreground"
+                    data-active-classes="bg-secondary-100"    
+                >
+                    {% for sub in category.children.all %}
+                        {% if sub.multiple %}
+                            <li id="accordion-collapse-heading-{{ sub.id }}">
+                                <button 
+                                    type="button"
+                                    class="flex items-center gap-2 w-full p-2 text-foreground transition duration-75 rounded-xl hover:bg-secondary-100"
+                                    data-accordion-target="#accordion-collapse-body-{{ sub.id }}" 
+                                    aria-expanded="{% if sub.id in open_sub_ids %}true{% else %}false{% endif %}" 
+                                    aria-controls="accordion-collapse-body-{{ sub.id }}"
+                                >
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+                                        class="lucide lucide-folder-open-icon lucide-folder-open">
+                                        <path
+                                            d="m6 14 1.5-2.9A2 2 0 0 1 9.24 10H20a2 2 0 0 1 1.94 2.5l-1.54 6a2 2 0 0 1-1.95 1.5H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H18a2 2 0 0 1 2 2v2" />
+                                    </svg>
+                                    <h1 class="flex-1 text-left">
+                                        {{ sub.name }}
+                                    </h1>
+                                    <svg 
+                                        xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+                                        data-accordion-icon
+                                        class="lucide lucide-chevron-down-icon lucide-chevron-down rotate-180 shrink-0">
+                                        <path d="m6 9 6 6 6-6" />
+                                    </svg>
+                                </button>
+
+                                <ul 
+                                    id="accordion-collapse-body-{{ sub.id }}" 
+                                    class="{% if sub.id not in open_sub_ids %}hidden{% endif %} my-2 ml-4 pl-2 border-l border-border-200 space-y-1"
+                                    aria-labelledby="accordion-collapse-heading-{{ sub.id }}"
+                                >
+                                    {% for item in contents %}
+                                        {% if item.category.id == sub.id %}
+                                            <li>
+                                                {% url 'content_detail' category.slug sub.slug item.slug as content_url %}
+                                                    <a 
+                                                        href="{% if sub.category_type == 'content' %}{{ content_url }}{% elif sub.category_type == 'link' %}{{ sub.url }}{% endif %}"
+                                                        class="flex w-full py-2 px-6 transition duration-75 rounded-xl {% if request.path == content_url %}bg-primary-600 text-white{% else %}hover:bg-secondary-100{% endif %}"
+                                                        target="{% if section.target %}_blank{% else %}_self{% endif %}"
+                                                    >
+                                                        <span class="flex-1 line-clamp-2">
+                                                            {{ item.title }}
+                                                        </span>
+                                                    </a>
+                                            </li>
+                                        {% endif %}
+                                    {% endfor %}
+                                </ul>
+                            </li>
+                        {% else %}
+                            <li>
+                                {% url 'content_detail' category.slug sub.slug sub.slug as content_url %}
+                                <a 
+                                    href="{% if sub.category_type == 'content' %}{{ content_url }}{% elif sub.category_type == 'link' %}{{ sub.url }}{% endif %}"
+                                    class="flex gap-2 items-center py-2 px-8 rounded-xl {% if request.path == content_url %}bg-primary-600 text-white{% else %}hover:bg-secondary-100{% endif %}"
+                                    target="{% if sub.target %}_blank{% else %}_self{% endif %}"
+                                >
+                                    {% if sub.category_type == 'link' %}
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                            stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-link-icon lucide-link">
+                                            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
+                                            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
+                                        </svg>
+                                    {% endif %}
+                                    <h1 class="flex-1 line-clamp-2">{{ sub.name }}</h1>
+                                </a>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Content side -->
+        <div class="gird gap-8 p-4 flex-1 overflow-hidden">
+            <div class="grid gap-2 border-b border-border-200 pb-4">
+                <h1 class="text-2xl lg:text-3xl xl:text-4xl font-semibold">{{ content.title }}</h1>
+                <span class="text-muted">{{ content.description }}</span>
+            </div>
+
+            <div class="relative pt-4">
+                {% if content.text_contents.all|length > 0 or content.image_contents.all|length > 0 or content.file_contents.all|length > 0 or content.staff_contents.all|length > 0 or content.popup_contents.all|length > 0 %}
+                    <div class="relative grid gap-8">
+                        <!-- Text contents -->
+                        {% include './components/text-content.html' %}
+                        
+                        <!-- Image contents -->
+                        {% include './components/image-content.html' %}
+
+                        <!-- File contents -->
+                        {% include './components/file-content.html' %}
+
+                        <!-- Staff contents -->
+                        {% include './components/staff-content.html' %}
+
+                        <!-- Staff contents -->
+                        {% include './components/popup-content.html' %}
+                    </div>
+                {% else %}
+                    <div class="max-w-lg mx-auto flex flex-col py-16 items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-bell-ring-icon lucide-bell-ring">
+                            <path d="M10.268 21a2 2 0 0 0 3.464 0" />
+                            <path d="M22 8c0-2.3-.8-4.3-2-6" />
+                            <path
+                                d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326" />
+                            <path d="M4 2C2.8 3.7 2 5.7 2 8" />
+                        </svg>
+                        <h1 class="text-2xl font-medium mt-2">{% translate 'Warning about content creation' %}</h1>
+                        <span class="block text-center text-muted">
+                            {% translate 'If you are looking for details related to this page, unfortunately they have not yet been downloaded. Remind the site management to insert data!' %}
+                        </span>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

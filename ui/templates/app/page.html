@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %}Басты бет{% endblock title %}
+
+
+{% block content %}
+<div class="w-full mx-auto">
+    <div class="swiper mySwiper w-full aspect-video">
+        <div class="swiper-wrapper">
+            {% for item in headliners %}
+                <div class="swiper-slide bg-primary-100">
+                    <div class="w-full h-full flex justify-center items-center text-7xl">
+                        <img src="{{ item.poster.url }}" class="w-full h-full" alt="{{ item.title }}">
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+</div>
+{% endblock content %}
+
+
+{% block js %}
+<script>
+    var swiper = new Swiper(".mySwiper", {
+        pagination: {
+            el: ".swiper-pagination",
+            dynamicBullets: true,
+        },
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+        },
+    });
+</script>
+{% endblock js %}

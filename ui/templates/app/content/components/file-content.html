@@ -1,0 +1,91 @@
+{% if content.file_contents.all|length > 0 %}
+    <div class="grid gap-2">
+        {% for item in content.file_contents.all %}
+            <div class="flex justify-between items-center border border-border-200 rounded-xl shadow py-2 px-4">
+                <div class="flex gap-2 items-center flex-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-file-text-icon lucide-file-text">
+                        <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" />
+                        <path d="M14 2v4a2 2 0 0 0 2 2h4" />
+                        <path d="M10 9H8" />
+                        <path d="M16 13H8" />
+                        <path d="M16 17H8" />
+                    </svg>
+                    <div class="flex-1">
+                        <h1 class="font-medium line-clamp-1">
+                            {{ item.caption }}
+                        </h1>
+                        <span class="text-muted">{{ content.title }}</span>
+                    </div>
+                </div>
+
+                <div class="grid gap-2 grid-cols-2">
+                    <!-- Modal toggle -->
+                    <button 
+                        data-modal-target="default-modal-{{ item.id }}" 
+                        data-modal-toggle="default-modal-{{ item.id }}"
+                        class="flex justify-center items-center bg-secondary-100 hover:bg-secondary-200 focus:ring-4 focus:outline-none focus:ring-secondary-300 font-medium rounded-lg p-3"
+                        type="button"
+                    >
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-eye-icon lucide-eye">
+                            <path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0" />
+                            <circle cx="12" cy="12" r="3" />
+                        </svg>
+                    </button>
+
+                    <!-- Main modal -->
+                    <div 
+                        id="default-modal-{{ item.id }}" 
+                        tabindex="-1" 
+                        aria-hidden="true"
+                        class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full"
+                    >
+                        <div class="relative p-4 w-full max-w-screen-2xl h-full">
+                            <!-- Modal content -->
+                            <div class="relative bg-white rounded-lg overflow-hidden shadow h-full">
+                                <!-- Close modal button -->
+                                <button 
+                                    type="button"
+                                    class="fixed top-2 right-6 bg-secondary-100 hover:bg-secondary-200 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                                    data-modal-hide="default-modal-{{ item.id }}"
+                                >
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x-icon lucide-x">
+                                        <path d="M18 6 6 18" />
+                                        <path d="m6 6 12 12" />
+                                    </svg>
+                                </button>
+
+                                <div class="h-full">
+                                    <div class="p-4">
+                                        <h1 class="font-medium text-xl">{{ item.caption }}</h1>
+                                        <span class="text-muted">{{ content.title }}</span>
+                                    </div>
+                                    
+                                    <div class="flex-1 h-full">
+                                        <iframe src="{{ item.source_file.url }}" class="w-full h-full"></iframe>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="{{ item.source_file.url }}"
+                        target="_blank"
+                        class="flex justify-center items-center bg-secondary-100 hover:bg-secondary-200 focus:ring-4 focus:outline-none focus:ring-secondary-300 font-medium rounded-lg p-3"
+                        type="button"
+                    >
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-download-icon lucide-download">
+                            <path d="M12 15V3" />
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                            <path d="m7 10 5 5 5-5" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endif %}

@@ -1,0 +1,42 @@
+{% if content.popup_contents.all|length > 0 %}
+    <div class="grid gap-2">
+        <div 
+            id="accordion-open" 
+            data-accordion="open" 
+            class="border border-border-200 rounded-xl overflow-hidden"
+            data-active-classes="bg-secondary-100 text-foreground"
+            data-inactive-classes="text-muted"
+        >
+            {% for item in content.popup_contents.all %}
+                <h2 id="accordion-open-heading-{{ item.id }}">
+                    <button 
+                        type="button"
+                        class="flex items-center justify-between w-full p-4 font-medium border-b border-border-200 cursor-pointer text-muted"
+                        data-accordion-target="#accordion-open-body-{{ item.id }}" 
+                        aria-expanded="false" 
+                        aria-controls="accordion-open-body-{{ item.id }}"
+                    >
+                        <span>{{ item.title }}</span>
+                       
+                        <svg
+                            data-accordion-icon aria-hidden="true shrink-0"
+                            xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-chevron-down-icon lucide-chevron-down rotate-180">
+                            <path d="m6 9 6 6 6-6" />
+                        </svg>
+                    </button>
+                </h2>
+                <div 
+                    id="accordion-open-body-{{ item.id }}" 
+                    class="hidden border-b border-border-200" 
+                    aria-labelledby="accordion-open-heading-{{ item.id }}"
+                >
+                    <div class="p-5 text-muted">
+                        {{ item.description|safe }}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endif %}

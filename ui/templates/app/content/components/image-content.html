@@ -1,0 +1,7 @@
+{% if content.image_contents.all|length > 0 %}
+    <div class="grid gap-2">
+        {% for item in content.image_contents.all %}
+            <img src="{{ item.image.url }}" class="w-full rounded-xl" alt="{{ content.title }}">
+        {% endfor %}
+    </div>
+{% endif %}

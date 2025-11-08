@@ -1,0 +1,40 @@
+<style>
+    #text-content {
+        text-align: justify;
+    }
+
+    #text-content a {
+        color: blue;
+        text-decoration: underline;
+    }
+
+    #text-content ul {
+        list-style: disc;
+    }
+    
+    #text-content ul li, #text-content ol li {
+        margin-left: 20px;
+    }
+
+    #text-content ol {
+        list-style: decimal;
+    }
+    #text-content table {
+        border: 1px solid silver;
+        border-collapse: collapse;
+    }
+    #text-content table th, td {
+        border: 1px solid silver;
+    }
+</style>
+
+
+{% if content.text_contents.all|length > 0 %}
+    <div class="grid gap-2">
+        {% for item in content.text_contents.all %}
+            <div class="text-muted text-justify" id="text-content">
+                {{ item.text|safe }}
+            </div>
+        {% endfor %}
+    </div>
+{% endif %}
