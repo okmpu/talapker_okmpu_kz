@@ -1,7 +1,7 @@
 <p align="center">
     <img 
         src="ui/static/images/logo.png" 
-        alt="Zhanibekov logo" width="96" 
+        alt="Zhanibekov logo" width="160" 
     />
 </p>
 <p align="center">
