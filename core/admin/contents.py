@@ -6,12 +6,10 @@ from core.models.contents import TextContent, ImageContent, FileContent, StaffCo
 
 # Category
 # ----------------------------------------------------------------------------------------------------------------------
-class ChildCategoryInline(admin.TabularInline):
+class ChildCategoryInline(admin.StackedInline):
     model = Category
     fk_name = 'parent'
     extra = 0
-    fields = ('name', 'slug', 'category_type', 'order')
-    show_change_link = True
 
 
 class CategoryAdmin(TranslationAdmin):
@@ -19,7 +17,7 @@ class CategoryAdmin(TranslationAdmin):
     list_filter = ('parent', 'category_type', 'multiple',)
     search_fields = ('name', 'slug', )
     prepopulated_fields = {'slug': ('name_en', )}
-    inlines = [ChildCategoryInline]
+    inlines = (ChildCategoryInline, )
 
     def get_queryset(self, request):
         return super().get_queryset(request).select_related('parent')
