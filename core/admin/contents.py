@@ -27,6 +27,7 @@ class ContentInline(LinkedAdminMixin, TranslationStackedInline):
     model = Content
     extra = 0
     fields =  ('title_kk', 'title_ru', 'title_en', 'slug', 'order', 'detail_link', )
+    prepopulated_fields = {'slug': ('title_en', )}
     readonly_fields = ('detail_link', )
 
     def detail_link(self, obj):
