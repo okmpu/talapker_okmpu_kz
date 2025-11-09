@@ -6,7 +6,7 @@ from core.models.contents import TextContent, ImageContent, FileContent, StaffCo
 
 # Category
 # ----------------------------------------------------------------------------------------------------------------------
-class ChildCategoryInline(admin.StackedInline):
+class ChildCategoryInline(TranslationStackedInline):
     model = Category
     fk_name = 'parent'
     prepopulated_fields = {'slug': ('name_en', )}
