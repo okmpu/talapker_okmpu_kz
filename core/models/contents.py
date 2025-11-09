@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 from core.validators import validate_image
+from ckeditor.fields import RichTextField
 
 
 # Content models
@@ -62,7 +63,7 @@ class TextContent(models.Model):
         Content, on_delete=models.CASCADE,
         related_name='text_contents', verbose_name=_('Content')
     )
-    text = models.TextField(verbose_name=_('Text'), blank=True, null=True)
+    text = RichTextField(verbose_name=_('Text'), blank=True, null=True)
     order = models.PositiveIntegerField(_('Order'), default=0)
 
     def __str__(self):

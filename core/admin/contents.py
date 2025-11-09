@@ -71,7 +71,7 @@ class CategoryAdmin(LinkedAdminMixin, TranslationAdmin):
 # Content
 # ----------------------------------------------------------------------------------------------------------------------
 # TextContent
-class TextContentTabular(TranslationTabularInline):
+class TextContentTabular(TranslationStackedInline):
     model = TextContent
     extra = 0
 

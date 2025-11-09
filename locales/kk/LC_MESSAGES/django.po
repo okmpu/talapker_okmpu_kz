@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-09 00:25+0500\n"
+"POT-Creation-Date: 2025-11-09 20:14+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,175 +17,196 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
-#: config/settings.py:113
+
+#: config/settings.py:114
 msgid "Kazakh"
 msgstr "Қазақша"
 
-#: config/settings.py:114
+#: config/settings.py:115
 msgid "Russian"
 msgstr "Русский"
 
-#: config/settings.py:115
+#: config/settings.py:116
 msgid "English"
 msgstr "English"
 
-#: core/models/contents.py:11 core/models/contents.py:40
-#: core/models/contents.py:49
+#: core/admin/contents.py:20 core/admin/contents.py:33
+msgid "Detail view"
+msgstr "Толығырақ"
+
+#: core/admin/contents.py:22 core/admin/contents.py:34
+msgid "Detail link"
+msgstr "Сілтеме"
+
+#: core/admin/contents.py:67
+msgid "Parent category"
+msgstr "Иелік категория"
+
+#: core/admin/contents.py:115 core/models/contents.py:12
+#: core/models/contents.py:33 core/models/contents.py:42
 msgid "Category"
 msgstr "Категория"
 
-#: core/models/contents.py:12 core/models/contents.py:62
-#: core/models/contents.py:71 core/models/contents.py:89
-#: core/models/contents.py:107 core/models/contents.py:126
-#: core/models/contents.py:151
+#: core/apps.py:8
+msgid "Core"
+msgstr "Core қосымшасы"
+
+#: core/models/contents.py:13 core/models/contents.py:55
+#: core/models/contents.py:64 core/models/contents.py:82
+#: core/models/contents.py:100 core/models/contents.py:119
+#: core/models/contents.py:144
 msgid "Content"
 msgstr "Контент"
 
-#: core/models/contents.py:13
+#: core/models/contents.py:14
 msgid "Link"
 msgstr "Сілтеме"
 
-#: core/models/contents.py:15
+#: core/models/contents.py:16
 msgid "Name"
 msgstr "Атауы"
 
-#: core/models/contents.py:16 core/models/contents.py:52
+#: core/models/contents.py:17 core/models/contents.py:45
 msgid "Slug"
 msgstr "Кілттік сөз"
 
-#: core/models/contents.py:17
+#: core/models/contents.py:18
 msgid "Category type"
 msgstr "Категория түрі"
 
-#: core/models/contents.py:20
+#: core/models/contents.py:21
 msgid "Parent"
 msgstr "Иелік"
 
-#: core/models/contents.py:22
+#: core/models/contents.py:23
 msgid "Multiple"
 msgstr "Көп контентті"
 
-#: core/models/contents.py:23 core/models/main.py:10 core/models/main.py:32
+#: core/models/contents.py:24 core/models/main.py:10 core/models/main.py:32
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
-#: core/models/contents.py:24 core/models/main.py:11
-msgid "Target"
-msgstr "Таргет"
+#: core/models/contents.py:25
+msgid "New tab"
+msgstr "Жаңа қойынды"
 
-#: core/models/contents.py:25 core/models/contents.py:55
-#: core/models/contents.py:74 core/models/contents.py:92
-#: core/models/contents.py:111 core/models/contents.py:137
-#: core/models/contents.py:155 core/models/main.py:12 core/models/main.py:34
+#: core/models/contents.py:26 core/models/contents.py:48
+#: core/models/contents.py:67 core/models/contents.py:85
+#: core/models/contents.py:104 core/models/contents.py:130
+#: core/models/contents.py:148 core/models/main.py:12 core/models/main.py:34
 msgid "Order"
 msgstr "Реттілік"
 
-#: core/models/contents.py:41
+#: core/models/contents.py:34
 msgid "Categories"
 msgstr "Категориялар"
 
-#: core/models/contents.py:51 core/models/contents.py:153
+#: core/models/contents.py:44 core/models/contents.py:146
 #: core/models/main.py:26
 msgid "Title"
 msgstr "Тақырыбы"
 
-#: core/models/contents.py:53 core/models/contents.py:154
+#: core/models/contents.py:46 core/models/contents.py:147
 msgid "Description"
 msgstr "Сипаттамасы"
 
-#: core/models/contents.py:54
+#: core/models/contents.py:47
 msgid "Last update"
 msgstr "Соңғы өзгеріс"
 
-#: core/models/contents.py:63
+#: core/models/contents.py:56
 msgid "Contents"
 msgstr "Контенттер"
 
-#: core/models/contents.py:73
+#: core/models/contents.py:66
 msgid "Text"
 msgstr "Мәтін"
 
-#: core/models/contents.py:77 core/models/contents.py:80
+#: core/models/contents.py:70 core/models/contents.py:73
 msgid "Text content"
 msgstr "Мәтінді контент"
 
-#: core/models/contents.py:81
+#: core/models/contents.py:74
 msgid "Text contents"
 msgstr "Мәтінді контенттер"
 
-#: core/models/contents.py:91 core/models/contents.py:130
+#: core/models/contents.py:84 core/models/contents.py:123
 msgid "Image"
 msgstr "Сурет"
 
-#: core/models/contents.py:95 core/models/contents.py:98
+#: core/models/contents.py:88 core/models/contents.py:91
 msgid "Image content"
 msgstr "Суретті контент"
 
-#: core/models/contents.py:99
+#: core/models/contents.py:92
 msgid "Image contents"
 msgstr "Суретті контенттер"
 
-#: core/models/contents.py:109
+#: core/models/contents.py:102
 msgid "Caption"
 msgstr "Тақырыбы"
 
-#: core/models/contents.py:110
+#: core/models/contents.py:103
 msgid "Source file"
 msgstr "Файл"
 
-#: core/models/contents.py:114 core/models/contents.py:117
+#: core/models/contents.py:107 core/models/contents.py:110
 msgid "File content"
 msgstr "Файлды контент"
 
-#: core/models/contents.py:118
+#: core/models/contents.py:111
 msgid "File contents"
 msgstr "Файлды контенттер"
 
-#: core/models/contents.py:128
+#: core/models/contents.py:121
 msgid "Full name"
 msgstr "Толық аты-жөні"
 
-#: core/models/contents.py:133
+#: core/models/contents.py:126
 msgid "Activity"
 msgstr "Қызметі"
 
-#: core/models/contents.py:134
+#: core/models/contents.py:127
 msgid "Bio"
 msgstr "Биография"
 
-#: core/models/contents.py:135
+#: core/models/contents.py:128
 msgid "Phone"
 msgstr "Телефон"
 
-#: core/models/contents.py:136
+#: core/models/contents.py:129
 msgid "Email"
 msgstr "Электронды пошта"
 
-#: core/models/contents.py:140 core/models/contents.py:143
+#: core/models/contents.py:133 core/models/contents.py:136
 msgid "Staff content"
 msgstr "Қызметкер контенті"
 
-#: core/models/contents.py:144
+#: core/models/contents.py:137
 msgid "Staff contents"
 msgstr "Қызметкер контенттері"
 
-#: core/models/contents.py:158 core/models/contents.py:162
+#: core/models/contents.py:151 core/models/contents.py:155
 msgid "Popup content"
-msgstr ""
+msgstr "Қалқымалы контент"
 
-#: core/models/contents.py:163
+#: core/models/contents.py:156
 msgid "Popup contents"
-msgstr ""
+msgstr "Қалқымалы контенттер"
 
 #: core/models/main.py:9
 msgid "Label"
 msgstr "Атауы"
 
+#: core/models/main.py:11
+msgid "Target"
+msgstr "Таргет"
+
 #: core/models/main.py:18
 msgid "Resource"
 msgstr "Ресурс"
 
-#: core/models/main.py:19 ui/templates/base.html:259
+#: core/models/main.py:19 ui/templates/components/footer.html:78
 msgid "Resources"
 msgstr "Ресурстар"
 
@@ -215,8 +236,8 @@ msgid "Maximum file size: {max_size_mb}MB"
 msgstr "Файлдың максималды өлшемі: {max_size_mb}МБ"
 
 #: core/validators.py:16
-msgid "The image size should not exceed 1MB"
-msgstr "Кескін өлшемі 1МБ аспауы керек"
+msgid "The image size should not exceed 1MB."
+msgstr "Кескін өлшемі 1МБ аспауы керек."
 
 #: core/validators.py:24
 msgid "The image should be square"
@@ -229,7 +250,8 @@ msgstr "Кескіннің максималды көлемі - 1024x1024px"
 #: core/validators.py:31 core/validators.py:52
 msgid ""
 "The image could not be processed. Make sure that the file is a valid image"
-msgstr "Кескінді өңдеу мүмкін болмады. Файлдың жарамды кескін екеніне көз жеткізіңіз"
+msgstr ""
+"Кескінді өңдеу мүмкін болмады. Файлдың жарамды кескін екеніне көз жеткізіңіз"
 
 #: core/validators.py:37
 msgid "The image size should not exceed 2MB"
@@ -253,30 +275,31 @@ msgid ""
 "If you are looking for details related to this page, unfortunately they have "
 "not yet been downloaded. Remind the site management to insert data!"
 msgstr ""
-"Егер сіз осы параққа қатысты мәліметтерді іздесеңіз, өкінішке орай, олар бар"
-"әлі жүктелмеген. Сайт басшылығына деректерді енгізуді ескертіңіз!"
+"Егер сіз осы параққа қатысты мәліметтерді іздесеңіз, өкінішке орай, олар "
+"барәлі жүктелмеген. Сайт басшылығына деректерді енгізуді ескертіңіз!"
 
-#: ui/templates/base.html:123 ui/templates/base.html:242
-#: ui/templates/components/nav-drawer.html:72
-msgid "Home page"
-msgstr "Басты бет"
-
-#: ui/templates/base.html:201
+#: ui/templates/components/footer.html:20
 msgid "All copyrights are protected."
 msgstr "Барлық авторлық құқықтар қорғалған."
 
-#: ui/templates/base.html:238
+#: ui/templates/components/footer.html:57
 msgid "Navigation"
 msgstr "Навигация"
 
-#: ui/templates/base.html:245
+#: ui/templates/components/footer.html:61
+#: ui/templates/components/nav-drawer.html:72
+#: ui/templates/components/navigation.html:13
+msgid "Home page"
+msgstr "Басты бет"
+
+#: ui/templates/components/footer.html:64
 msgid "News"
 msgstr "Жаңалықтар"
 
-#: ui/templates/base.html:248
+#: ui/templates/components/footer.html:67
 msgid "Announcements"
 msgstr "Хабарландырулар"
 
-#: ui/templates/base.html:251
+#: ui/templates/components/footer.html:70
 msgid "Events"
 msgstr "Іс-шаралары"
