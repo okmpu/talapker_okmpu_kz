@@ -21,19 +21,11 @@ class Category(models.Model):
     )
     multiple = models.BooleanField(_('Multiple'), default=False)
     url = models.CharField(_('URL'), max_length=128, blank=True, null=True)
-    target = models.BooleanField(_('Target'), default=False)
+    target = models.BooleanField(_('New tab'), default=False)
     order = models.PositiveIntegerField(_('Order'), default=0)
 
     def __str__(self):
         return self.name
-
-    def get_slug_path(self):
-        parts = []
-        node = self
-        while node is not None:
-            parts.append(node.slug)
-            node = node.parent
-        return '/'.join(reversed(parts))
 
     class Meta:
         unique_together = ('parent', 'slug')
