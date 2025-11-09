@@ -1,0 +1,96 @@
+{% load static %}
+{% load i18n %}
+
+
+<div class="max-w-screen-2xl mx-auto px-4 py-6 lg:py-8">
+    <div class="grid gap-16 md:flex">
+        <div class="flex flex-col gap-4 max-w-xs">
+            <!-- Logo -->
+            <div class="relative">
+                <a href="{% url 'main' %}" class="inline-flex items-center">
+                    <img src="{% static '/images/logo.png' %}" class="w-36" alt="Zhanibekov university logo" />
+                </a>
+            </div>
+
+            <div class="grid gap-4">
+                <!-- Copyright -->
+                <span class="text-muted">
+                    © 2025
+                    <a href="https://zhanibekov.edu.kz" class="hover:underline">Zhanibekov University.</a>
+                    {% translate 'All copyrights are protected.' %}
+                </span>
+
+                <!-- Social links -->
+                <div class="flex gap-2">
+                    <a 
+                        href="https://www.facebook.com/oqmpu?mibextid=ZbWKwL" 
+                        class="text-foreground hover:text-muted"
+                        target="_blank"
+                    >
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-facebook-icon lucide-facebook">
+                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                        </svg>
+                    </a>
+                    <a 
+                        href="https://www.instagram.com/zhanibekovuniversity/" 
+                        class="text-foreground hover:text-muted"
+                        target="_blank"    
+                    >
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-instagram-icon lucide-instagram">
+                            <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                            <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Links -->
+        <div class="flex-1 grid grid-cols-2 gap-8 lg:grid-cols-3">
+            <!-- Navigation -->
+            <div class="flex flex-col gap-4">
+                <h2 class="font-medium">
+                    {% translate 'Navigation' %}
+                </h2>
+                <ul class="text-muted grid gap-2">
+                    <li>
+                        <a href="{% url 'main' %}" class="hover:underline">{% translate 'Home page' %}</a>
+                    </li>
+                    <li>
+                        <a href="#" class="hover:underline">{% translate 'News' %}</a>
+                    </li>
+                    <li>
+                        <a href="#" class="hover:underline">{% translate 'Announcements' %}</a>
+                    </li>
+                    <li>
+                        <a href="#" class="hover:underline">{% translate 'Events' %}</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Resources -->
+            <div class="flex flex-col gap-4">
+                <h2 class="font-medium">
+                    {% translate 'Resources' %}
+                </h2>
+                <ul class="text-muted grid gap-2">
+                    {% for item in resources %}
+                        <li>
+                            <a 
+                                href="{{ item.url }}" 
+                                target="{% if item.target %}_blank{% else %}_self{% endif %}" 
+                                class="hover:underline"
+                            >
+                                {{ item.label }}
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+    </div>

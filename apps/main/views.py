@@ -8,6 +8,7 @@ from core.models.main import Headliner
 # ----------------------------------------------------------------------------------------------------------------------
 def main_view(request):
     headliners = Headliner.objects.filter(is_archive=False)
+
     context = {
         'headliners': headliners,
     }

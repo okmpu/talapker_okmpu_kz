@@ -1,0 +1,65 @@
+{% load i18n %}
+
+
+<div class="lg:max-w-screen-2xl mx-auto px-4 py-2">
+    <div class="hidden w-full lg:block lg:w-auto">
+        <ul class="flex gap-8 justify-center">
+            <li>
+                <a 
+                    href="{% url 'main' %}"
+                    class="block py-2 px-3 text-white whitespace-nowrap bg-primary-600 rounded lg:bg-transparent lg:text-primary-600 lg:p-0"
+                    aria-current="page"
+                >
+                    {% translate 'Home page' %}
+                </a>
+            </li>
+            {% for category in categories %}
+                <li>
+                    <button 
+                        id="dropdownNavbarLink-{{ category.id }}" 
+                        data-dropdown-toggle="dropdownNavbar-{{ category.id }}"
+                        class="flex gap-1 items-center justify-between whitespace-nowrap w-full py-2 px-3 hover:bg-secondary-100 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-600 lg:p-0 lg:w-auto"
+                    >
+                        <span>{{ category.name }}</span>
+                        {% if category.children.all|length > 0 %}
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+                                class="lucide lucide-chevron-down-icon lucide-chevron-down">
+                                <path d="m6 9 6 6 6-6" />
+                            </svg>
+                        {% endif %}
+                    </button>
+
+                    <div 
+                        id="dropdownNavbar-{{ category.id }}"
+                        class="z-10 hidden font-normal bg-white divide-y divide-secondary-100 rounded-lg shadow"
+                    >
+                        <ul 
+                            class="py-2 text-foreground"
+                            aria-labelledby="dropdownLargeButton"
+                        >
+                            {% for sub in category.children.all %}
+                                <li>
+                                    <a 
+                                        href="{% if sub.category_type == 'content' %}{% url 'content_detail' category.slug sub.slug sub.slug %}{% elif sub.category_type == 'link' %}{{ sub.url }}{% endif %}"
+                                        class="flex items-center gap-2 px-4 py-2 hover:bg-secondary-100"
+                                        target="{% if sub.target %}_blank{% else %}_self{% endif %}"
+                                    >
+                                        {% if sub.category_type == 'link' %}
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-link-icon lucide-link">
+                                                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
+                                                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
+                                            </svg>
+                                        {% endif %}
+                                        <h1 class="flex-1 line-clamp-2">{{ sub.name }}</h1>
+                                    </a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
