@@ -9,6 +9,7 @@ from core.models.contents import TextContent, ImageContent, FileContent, StaffCo
 class ChildCategoryInline(admin.StackedInline):
     model = Category
     fk_name = 'parent'
+    prepopulated_fields = {'slug': ('name_en', )}
     extra = 0
 
 
