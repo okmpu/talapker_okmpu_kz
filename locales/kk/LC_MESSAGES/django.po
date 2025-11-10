@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-09 20:14+0500\n"
+"POT-Creation-Date: 2025-11-10 23:03+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -30,19 +30,19 @@ msgstr "Русский"
 msgid "English"
 msgstr "English"
 
-#: core/admin/contents.py:20 core/admin/contents.py:33
+#: core/admin/contents.py:20 core/admin/contents.py:34
 msgid "Detail view"
 msgstr "Толығырақ"
 
-#: core/admin/contents.py:22 core/admin/contents.py:34
+#: core/admin/contents.py:22 core/admin/contents.py:35
 msgid "Detail link"
 msgstr "Сілтеме"
 
-#: core/admin/contents.py:67
+#: core/admin/contents.py:68
 msgid "Parent category"
 msgstr "Иелік категория"
 
-#: core/admin/contents.py:115 core/models/contents.py:12
+#: core/admin/contents.py:116 core/models/contents.py:12
 #: core/models/contents.py:33 core/models/contents.py:42
 msgid "Category"
 msgstr "Категория"
@@ -170,7 +170,7 @@ msgstr "Қызметі"
 msgid "Bio"
 msgstr "Биография"
 
-#: core/models/contents.py:128
+#: core/models/contents.py:128 ui/templates/app/page.html:203
 msgid "Phone"
 msgstr "Телефон"
 
@@ -206,7 +206,7 @@ msgstr "Таргет"
 msgid "Resource"
 msgstr "Ресурс"
 
-#: core/models/main.py:19 ui/templates/components/footer.html:78
+#: core/models/main.py:19 ui/templates/components/footer.html:99
 msgid "Resources"
 msgstr "Ресурстар"
 
@@ -278,28 +278,96 @@ msgstr ""
 "Егер сіз осы параққа қатысты мәліметтерді іздесеңіз, өкінішке орай, олар "
 "барәлі жүктелмеген. Сайт басшылығына деректерді енгізуді ескертіңіз!"
 
+#: ui/templates/app/page.html:28 ui/templates/components/footer.html:57
+msgid "Admission committee"
+msgstr "Қабылдау комиссиясы"
+
+#: ui/templates/app/page.html:31
+msgid ""
+"Admission committee of the South Kazakhstan Pedagogical University named "
+"after O. Zhanibekov"
+msgstr ""
+"Ө.Жәнібеков атындағы Оңтүстік Қазақстан педагогикалық университетінің "
+"қабылдау комиссиясы"
+
+#: ui/templates/app/page.html:45 ui/templates/components/footer.html:61
+msgid "Bachelor"
+msgstr "Бакалавриат"
+
+#: ui/templates/app/page.html:61 ui/templates/components/footer.html:64
+msgid "Magistracy"
+msgstr "Магистратура"
+
+#: ui/templates/app/page.html:77 ui/templates/components/footer.html:67
+msgid "Doctoral"
+msgstr "Докторантура"
+
+#: ui/templates/app/page.html:94 ui/templates/components/footer.html:70
+msgid "Retraining course"
+msgstr "Қайта даярлау курсы"
+
+#: ui/templates/app/page.html:106
+msgid "Contact us"
+msgstr "Бізбен байланыс"
+
+#: ui/templates/app/page.html:110
+msgid "All the resources you can contact us"
+msgstr "Бізбен байланыса алатын барлық ресурстар"
+
+#: ui/templates/app/page.html:131
+msgid "Address"
+msgstr "Мекен-жайы"
+
+#: ui/templates/app/page.html:132
+msgid "060001, Shymkent, A. Baitursynov N13"
+msgstr "060001, Шымкент, А. Байтұрсынов N13"
+
+#: ui/templates/app/page.html:146
+msgid "Call center"
+msgstr "Call орталық"
+
+#: ui/templates/app/page.html:166
+msgid "Working days"
+msgstr "Жұмыс күндері"
+
+#: ui/templates/app/page.html:168
+msgid "Monday-Friday"
+msgstr "Дүйсенбі-Жұма"
+
+#: ui/templates/app/page.html:169
+msgid "Saturday"
+msgstr "Сенбі"
+
+#: ui/templates/app/page.html:186
+msgid "Executive Secretary"
+msgstr "Жауапты хатшы"
+
+#: ui/templates/app/page.html:188
+msgid "Bairbekova Lazzat Myrzakhanovna"
+msgstr "Байырбекова Ләззат Мырзахановна"
+
 #: ui/templates/components/footer.html:20
 msgid "All copyrights are protected."
 msgstr "Барлық авторлық құқықтар қорғалған."
 
-#: ui/templates/components/footer.html:57
+#: ui/templates/components/footer.html:78
 msgid "Navigation"
 msgstr "Навигация"
 
-#: ui/templates/components/footer.html:61
+#: ui/templates/components/footer.html:82
 #: ui/templates/components/nav-drawer.html:72
 #: ui/templates/components/navigation.html:13
 msgid "Home page"
 msgstr "Басты бет"
 
-#: ui/templates/components/footer.html:64
+#: ui/templates/components/footer.html:85
 msgid "News"
 msgstr "Жаңалықтар"
 
-#: ui/templates/components/footer.html:67
+#: ui/templates/components/footer.html:88
 msgid "Announcements"
 msgstr "Хабарландырулар"
 
-#: ui/templates/components/footer.html:70
+#: ui/templates/components/footer.html:91
 msgid "Events"
 msgstr "Іс-шаралары"
