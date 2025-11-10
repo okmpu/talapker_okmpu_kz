@@ -106,60 +106,22 @@
                         aria-labelledby="accordion-heading-{{ category.id }}"
                     >
                         <div class="p-2">
-                            <div
-                                id="accordion-sub-{{ category.id }}" 
-                                data-accordion="collapse"
-                                data-inactive-classes="text-muted"
-                                data-active-classes="text-foreground bg-transparent font-medium"
-                            >
-                                {% for sub_category in category.children.all %}
-                                    <h2 id="accordion-sub-heading-{{ sub_category.id }}">
-                                        <button 
-                                            type="button"
-                                            class="flex gap-2 items-center justify-between w-full py-2 px-4 border-b border-border-200"
-                                            data-accordion-target="#accordion-sub-body-{{ sub_category.id }}" 
-                                            aria-expanded="false"
-                                            aria-controls="accordion-sub-body-{{ sub_category.id }}"
-                                        >
-                                            <span>{{ sub_category.name }}</span>
-                                            {% if sub_category.children.all %}
-                                                <svg 
-                                                    data-accordion-icon
-                                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                                    stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
-                                                    class="lucide lucide-chevron-down shrink-0">
-                                                    <path d="m6 9 6 6 6-6" />
-                                                </svg>
-                                            {% endif %}
-                                        </button>
-                                    </h2>
-                                    <div 
-                                        id="accordion-sub-body-{{ sub_category.id }}" 
-                                        class="hidden" 
-                                        aria-labelledby="accordion-sub-heading-{{ sub_category.id }}"
-                                    >
-                                        <div class="p-2">
-                                            {% for section in sub_category.children.all %}
-                                                <a 
-                                                    href="{% if section.app_name == 'content' %}{% url 'content_detail' category.slug sub_category.slug section.slug section.slug %}{% elif section.app_name == 'university' %}/university/{{ section.slug }}{% else %}{{ section.url }}{% endif %}"
-                                                    class="flex items-center gap-2 px-4 py-2 hover:bg-secondary-100"
-                                                    target="{% if section.target %}_blank{% else %}_self{% endif %}"
-                                                >
-                                                    {% if section.app_name == 'none' %}
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                                            stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-link-icon lucide-link">
-                                                            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
-                                                            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
-                                                        </svg>
-                                                    {% endif %}
-                                                    <h1 class="flex-1 line-clamp-2">{{ section.name }}</h1>
-                                                </a>
-                                            {% endfor %}
-                                        </div>
-                                    </div>
-                                {% endfor %}
-                            </div>
+                            {% for sub in category.children.all %}
+                                <a 
+                                    href="{% if sub.category_type == 'content' %}{% url 'content_detail' category.slug sub.slug sub.slug %}{% elif sub.category_type == 'link' %}{{ sub.url }}{% endif %}"
+                                    class="flex items-center gap-2 px-4 py-2 hover:bg-secondary-100"
+                                    target="{% if sub.target %}_blank{% else %}_self{% endif %}"
+                                >
+                                    {% if sub.category_type == 'link' %}
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                            stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-link-icon lucide-link">
+                                            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
+                                            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
+                                        </svg>
+                                    {% endif %}
+                                    <h1 class="flex-1 line-clamp-2">{{ sub.name }}</h1>
+                                </a>
+                            {% endfor %}
                         </div>
                     </div>
                 {% endfor %}

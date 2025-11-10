@@ -11,6 +11,7 @@ Django==5.2.8
 django-admin-interface==0.30.1
 django-browser-reload==1.21.0
 django-ckeditor==6.7.3
+django-ckeditor-5==0.2.18
 django-colorfield==0.14.0
 django-js-asset==3.1.2
 django-modeltranslation==0.19.17
